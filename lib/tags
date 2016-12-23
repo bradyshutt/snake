@@ -1,0 +1,12 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+arrowKeyPress	/home/bshutt/dev/projects/snake/lib/snake.js	/^   function arrowKeyPress(dir) {$/;"	f	language:JavaScript	function:snake
+endGame	/home/bshutt/dev/projects/snake/lib/snake.js	/^   function endGame() {$/;"	f	language:JavaScript	function:snake
+init	/home/bshutt/dev/projects/snake/lib/snake.js	/^   function init(gameBoard) {$/;"	f	language:JavaScript	function:snake
+let	/home/bshutt/dev/projects/snake/lib/snake.js	/^   }$/;"	f	language:JavaScript
+NextColor	/home/bshutt/dev/projects/snake/lib/snake.js	/^function NextColor() {$/;"	f	language:JavaScript
+Player	/home/bshutt/dev/projects/snake/lib/snake.js	/^      function Player(gameBoard, startPos) {$/;"	c	language:JavaScript	class:let
+Player	/home/bshutt/dev/projects/snake/lib/snake.js	/^      }$/;"	c	language:JavaScript
+snake	/home/bshutt/dev/projects/snake/lib/snake.js	/^var snake = function ($) {$/;"	f	language:JavaScript
+SnakeNode	/home/bshutt/dev/projects/snake/lib/snake.js	/^      function SnakeNode(cell, nextCell) {$/;"	c	language:JavaScript
+spawnPoint	/home/bshutt/dev/projects/snake/lib/snake.js	/^   function spawnPoint() {$/;"	f	language:JavaScript	function:snake
+start	/home/bshutt/dev/projects/snake/lib/snake.js	/^   function start() {$/;"	f	language:JavaScript	function:snake
