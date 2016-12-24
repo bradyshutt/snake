@@ -30,7 +30,7 @@ var createBoard = (function($) {
       ops.dimentions = { 'x': ops.numXCells, 'y': ops.numYCells }
 
       if (options.showButton) {
-         $('#' + options.showButton).click(showBoard)
+         $('.' + options.showButton).click(showBoard)
          $(canvas).hide()
       }
       else

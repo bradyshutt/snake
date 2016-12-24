@@ -4,8 +4,8 @@
 
 <title>Snake</title> 
 <style type="text/css" media="all">
-  * { padding: 0; margin: 0; overflow: hidden; }
-  body { 
+  * { padding: 0; margin: 0; overflow: hidden; font-family: helvetica; color: #AAA;}
+  .wrapper { 
     position: absolute; 
     top: 0; 
     width: 100%; 
@@ -15,16 +15,44 @@
     align-items: center;
     justify-content: center;
   }
-  button { position: relative; top: -20%; padding: 10px; }
+  body {background-color: black;}
+      
+  button { position: relative; top: -20%; padding: 10px;  color: black}
   canvas { margin: 0 auto;} 
+  .show-button {
+     text-align: center;
+  }
+  p {
+     margin-top: 10px;
+  }
+  h1 {
+     text-align: center;
+     padding-top: 8px;
+  }
+  h1 * {padding: 0 1px;}
+  .S {color: red;}
+  .n {color: orange;}
+  .a {color: yellow;}
+  .k {color: #55ff00;}
+  .e {color: green;}
+  .dot {color: blue;}
+  .j {color: #8800ff;}
+  .s {color: #ff00ff;}
 
 </style>
 
 
 </head> 
 <body> 
+   <h1><span class="S">S</span><span class="n">n</span><span class="a">a</span><span class="k">k</span><span class="e">e</span><span class="dot">.</span><span class="j">j</span><span class="s">s</span></h1>
+   <div class="wrapper">
+       
   <canvas id="board"></canvas>
-  <button id="show-button">Start Game</button>
+  <div class="show-button">
+   <button id="show-button">Start Game</button>
+   <p>(or press Enter)</p>
+  </div>
+   </div>
 </body> 
 <script src="node_modules/babel-polyfill/dist/polyfill.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
