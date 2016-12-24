@@ -24,7 +24,7 @@
 //         console.log('$nake status= ', snake.getStatus())
 //      }, 1200)
 
-      $(document).keydown((event) => {
+      $(window).keydown((event) => {
          console.log(event.which)
          switch (event.which) { 
             case 37: //Left
