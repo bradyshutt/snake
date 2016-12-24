@@ -7,6 +7,6 @@ NextColor	/home/bshutt/dev/projects/snake/lib/snake.js	/^function NextColor() {$
 Player	/home/bshutt/dev/projects/snake/lib/snake.js	/^      function Player(gameBoard, startPos) {$/;"	c	language:JavaScript	class:let
 Player	/home/bshutt/dev/projects/snake/lib/snake.js	/^      }$/;"	c	language:JavaScript
 snake	/home/bshutt/dev/projects/snake/lib/snake.js	/^var snake = function ($) {$/;"	f	language:JavaScript
-SnakeNode	/home/bshutt/dev/projects/snake/lib/snake.js	/^      function SnakeNode(cell, nextCell) {$/;"	c	language:JavaScript
+SnakeNode	/home/bshutt/dev/projects/snake/lib/snake.js	/^      function SnakeNode(cell, nextCell, color) {$/;"	c	language:JavaScript
 spawnPoint	/home/bshutt/dev/projects/snake/lib/snake.js	/^   function spawnPoint() {$/;"	f	language:JavaScript	function:snake
 start	/home/bshutt/dev/projects/snake/lib/snake.js	/^   function start() {$/;"	f	language:JavaScript	function:snake

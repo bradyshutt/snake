@@ -15,10 +15,14 @@
          gridLinesColor: '#ddd',
       })
 
-      setTimeout(() => { 
-         $('#show-button').click() 
-         snake.init(board)
-      }, 1000)
+      $('#show-button').click(() => {
+         console.log('show-button clicked')
+         snake.init(board) 
+      })
+
+//      setInterval(() => { 
+//         console.log('$nake status= ', snake.getStatus())
+//      }, 1200)
 
       $(document).keydown((event) => {
          console.log(event.which)
@@ -34,6 +38,18 @@
                break
             case 40: //Down
                snake.arrowKeyPress('S')
+               break
+            case 13:
+               //console.log('snake status:', snake.getStatus());
+               //console.log('isEnded?: ', snake.getStatus() === 'ended')
+               if (snake.getStatus() === 'ready') {
+                  //console.log('starting first time')
+                  $('#show-button').click()
+               } else if (snake.getStatus() === 'ended') {
+                //  console.log('restarting snake')
+                  snake.restart()
+               }
+
                break
                
          }

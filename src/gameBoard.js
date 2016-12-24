@@ -52,6 +52,11 @@ var createBoard = (function($) {
       return board
    }
 
+   function setBorderColor(color) {
+      ops.borderColor = color
+   }
+
+
    let draw = (function() {
       function drawGridLines() {
          let border = ops.borderSize
@@ -64,13 +69,17 @@ var createBoard = (function($) {
          for (let row = border; row < ops.boardHeight; row += ops.pixelSize) {
             pen.strokeRect(border, row, ops.boardWidth - border, 1)
          } 
+         drawBorder(ops.borderColor)
+      }
 
-         pen.fillStyle = ops.borderColor
+      function drawBorder(color) {
+         console.log('painting border:', color)
+         let border = ops.borderSize
+         pen.fillStyle = color
          pen.fillRect(0, 0, border, ops.boardHeight)
          pen.fillRect(0, 0, ops.boardWidth, border)
          pen.fillRect(ops.boardWidth - border, 0, border, ops.boardHeight)
          pen.fillRect(0, ops.boardHeight - border, ops.boardWidth, border)
-
       }
 
       function drawCell(x, y, color) {
@@ -123,6 +132,7 @@ var createBoard = (function($) {
          pen.font = '48px Helvetica'
          pen.fillText('Game Over!', ops.boardWidth / 2, ops.boardHeight / 4)
          pen.font = '32px Helvetica'
+         pen.fillText('Press enter to restart the game.', ops.boardWidth / 2, ops.boardHeight / 2)
          pen.fillText('You ended with ' + points + ' point' +
             ((points > 1) ? 's!' : '!'), 
             ops.boardWidth / 2, ops.boardHeight / 4 * 3)
@@ -133,7 +143,8 @@ var createBoard = (function($) {
          cell: drawCell,
          board: drawBoard,
          clear: clearBoard,
-         gameOver: gameOver
+         gameOver: gameOver,
+         border: drawBorder
       }
             
    })()
@@ -162,6 +173,14 @@ var createBoard = (function($) {
          return cell
       }
 
+//      function resetPlayerPos() {
+//         grid.forEach(col => col.forEach(cell => {
+//            if (cell.type === 'head')
+//               cell.empty()
+//         }))
+//         
+//      }
+
       /* Can pass in a cellID, (x,y) coords, or an {x:_, y:_} object */
       function getCell(cellID, yCoord) {
          return (typeof cellID === 'number')
@@ -180,6 +199,11 @@ var createBoard = (function($) {
             })
          } while (cell.content !== 'empty')
          return cell
+      }
+
+      function reset() {
+         grid.forEach(col => col.forEach( cell => cell.empty()))
+         
       }
 
       function moveCell(from, to) {
@@ -256,15 +280,18 @@ var createBoard = (function($) {
          init: init,
          place: placeCell,
          getCell: getCell,
+         reset: reset,
          draw: () => draw.board(grid),
          paint: {
             gameOver: draw.gameOver,
-            clear: draw.clear
+            clear: draw.clear,
+            border: draw.border
          },
          isReady: boardReady,
          getGridHeight: () => gridHeight,
          getGridWidth: () => gridWidth,
-         randomCell: randomCell
+         randomCell: randomCell,
+         setBorderColor: setBorderColor
       }
 
    })()
